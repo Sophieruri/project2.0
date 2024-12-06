@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+
+</head>
+<body>
+    
+   
+    <h1>Sign Up</h1>
+ 
+        <p style="color: orangered;">
+    <form action="/signup" method="post">
+
+        <div>
+            <label for="Fullname"></label>
+            <input type="text" name="fullname" id="fullname">
+        </div>
+        
+        
+        <div>
+            <label for="email">Email</label>
+            <input type="text" name="email" id="email" required>
+        </div>
+        <div>
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password">
+            <p id="passwordError"></p>
+        </div>
+        <div>
+            <label for="confirmpassword">Confirm password</label>
+            <input type="password" name="confirmpassword" id="confirmpassword" required>
+            </div>
+           <input type="submit" value="sign up">
+        
+    </form>
+    <p>Already have an account? <a href="/signin">Sign in</a></p>
+
+    <script>
+        const passwordError= document.getElementById("passworderror")
+        const passwordInput= document.getElementById("password")
+        passwordInput.addEventListener("input",()=>{
+            if(passwordInput.value.length<8){
+                passwordError.textContent="password must be over 8 characters"
+            }else{
+                passwordError.textContent=""
+            }
+        })
+      document.getElementById("confirmpassword").addEventListener
+        passwordInput.addEventListener("input",()=>{
+            if(passwordInput.value.length<8){
+                passwordError.textContent="password must be over 8 characters"
+            }else{
+                passwordError.textContent=""
+            }
+        })
+
+    </script>
+</body>
+</html>

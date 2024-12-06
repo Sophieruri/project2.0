@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library App</title>
+</head>
+<body>
+    <%- include("header.ejs")%>
+    <main>
+        <section id="hero">
+            <h1> Hello <%=locals.user.Fullname %> .Happy reading!!</h1> 
+            <a href="/updateprofile"><ion-icon name="create-outline"></ion-icon> Update Profile</a>     
+            <%if(locals.mesage){%>
+                <p style="background-color: blueviolet;color: aqua; text-align: center;padding: 12px;">Book Borrowed Succesfully</p>
+            <%}%>
+            <h2>Books Borrowed</h2>
+            <table>
+                <tr>
+                    <th>Book Title</th>
+                    <th>Date Borowed</th>
+                    <TH>Date to Return</TH>
+                </tr>
+                <%records.reverse().forEach(record=>{%>
+                <tr>
+                    <td><%=record.title%></td>
+                    <td><%=record.DateBorrowed.toLocaleDateString()%></td>
+                    <td><%=record.ReturnDate.toLocaleDateString()%></td>
+                </tr>
+           <% })%>
+            </table>
+        </section>
+    </main>
+    <footer>
+        <p> LibApp &copy; <%= new Date().getFullYear() %> . All rights Reserved. </p>
+    </footer>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

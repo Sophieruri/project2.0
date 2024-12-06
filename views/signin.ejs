@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    
+
+
+    <h1>Sign In</h1>
+    <%if(locals.errorMessage){ %>
+        <p style="color: orangered;"><%=locals.errorMessage%> </p>
+   <% }%>
+    <form action="/signin" method="post">
+
+      
+        <div>
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" required>
+        </div>
+        <div>
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password">
+            
+        </div>
+        <input type="submit" value="sign in">
+           
+        
+    </form>
+    <p>Do not have an account? <a href="/signup">Sign up</a></p>
+
+</body>
+</html>

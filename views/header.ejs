@@ -1,0 +1,60 @@
+<header>
+
+    <div class="container">
+
+        <a href="#" class="logo">
+            <img src="/images/download.jpg" alt="Pod logo">
+        </a>
+
+            <nav class="navbar" data-navbar>
+
+            <button class="nav-close-btn" data-nav-close-btn>
+                <ion-icon name="close-outline"></ion-icon>
+            </button>
+
+            <ul class="navbar-list">
+
+                <li>
+                    <a href="#home" class="navbar-link">Home</a>
+                </li>
+
+                <li>
+                    <a href="#features" class="navbar-link">Features</a>
+                </li>
+
+                <li>
+                    <a href="#overview" class="navbar-link">Overview</a>
+                </li>
+
+                <li>
+                    <a href="#blog" class="navbar-link">Blog</a>
+                </li>
+
+             
+                <% if(locals.user){%>
+                    <a href="/profile"><%= locals.user.username %></a>
+                    <a href="/logout">logout</a>
+                <%}esle{%>
+                    <a href="/signup">Sign Up</a>
+                    <a href="/signin">Sign in</a>
+                <%}%>    
+                <li>
+                    <!-- <a href="/profile" class="navbar-link">Profile</a> -->
+                </li>
+
+                <li>
+                    <button class="btn-primary"><a href="/signup">Get started</a></button>
+                    
+                </li>
+
+            </ul>
+
+        </nav>
+
+        <button class="nav-open-btn" data-nav-open-btn>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+
+    </div>
+
+</header>
